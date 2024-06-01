@@ -1,0 +1,170 @@
+	*,
+	::before,
+	::after {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	img {
+		max-width: 100%;
+		display: block;
+	}
+	/* reset button */
+	button {
+		appearance: none;
+		background-color: transparent;
+		border: none;
+		cursor: pointer;
+		outline: none;
+		padding: 0;
+		margin: 0;
+		font-family: inherit;
+		font-size: inherit;
+		color: inherit;
+		text-decoration: none;
+		text-transform: none;
+		line-height: normal;
+		overflow: visible;
+	}
+	input:disabled {
+		opacity: 0.3;
+		pointer-events: none;
+	}
+	body {
+		min-height: 100svh;
+		padding: 2rem;
+		background-color: #121212;
+		color: white;
+		font-family: system-ui;
+		/*
+		display: grid;
+		place-content: center;
+		*/
+	}
+	.wrapper {
+		width: 100%;
+		max-width: 800px;
+		margin-inline: auto;
+	}
+	h1 {
+		font-size: 1.2rem;
+		font-weight: 300;
+		text-align: center;
+	}
+	.filters {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		gap: 1rem;
+		margin-block: 2rem;
+	}
+	.filters > div {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		border: 1px solid #ffffff30;
+		padding: 0.5rem 1rem;
+		border-radius: 10px;
+		transition: background-color 300ms ease-in-out;
+	}
+	.filters > div:focus-within {
+		background: #ffffff30;
+	}
+	/*
+	.filters input[type="checkbox"] {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		border-width: 0;
+	}*/
+	.filters input[type="color"] {
+		border: 1px solid #ffffff30;
+		border-radius: 50%;
+		width: 1.75rem;
+		height: 1.75rem;
+		outline: none;
+		transition: scale 300ms ease-in-out;
+	}
+	.filters input[type="color"]:hover,
+	.filters input[type="color"]:focus {
+		scale: 1.15;
+	}
+	.filters button {
+		transition: scale 300ms ease-in-out;
+		border: none;
+		outline: none;
+		font-size: 0.7rem;
+	}
+	.filters button#btn-restore {
+		width: 2rem;
+		height: 2rem;
+		display: grid;
+		place-content: center;
+	}
+	.filters button:focus-visible,
+	.filters button:hover {
+		scale: 1.25;
+	}
+	.image-gallery {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
+		margin-inline: auto;
+		gap: 0.25rem;
+	}
+
+	.image-gallery > div {
+		width: 100%;
+		height: 100%;
+		aspect-ratio: 1;
+		filter: grayscale(0) blur(0px);
+		transition: scale 300ms ease-in-out;
+	}
+
+	.image-gallery img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: scale 300ms ease-in-out;
+		border-radius: 5px;
+	}
+	.image-gallery > div.no-match {
+		animation: hideit 300ms linear forwards;
+		pointer-events: none;
+	}
+
+	.image-gallery > div:not(.no-match):hover {
+		scale: 1.15;
+		z-index: 1;
+	}
+
+	.hashtag {
+		margin-top: 0.5rem;
+		font-size: 0.8rem;
+		font-weight: 300;
+		text-align: right;
+		width: 100%;
+	}
+
+	@keyframes hideit {
+		25% {
+			filter: grayscale(0) blur(1px);
+		}
+		50% {
+			filter: grayscale(0) blur(2px);
+			opacity: 1;
+		}
+		75% {
+			filter: grayscale(0.5) blur(3px);
+		}
+		100% {
+			filter: grayscale(1) blur(4px);
+			opacity: 0.3;
+			scale: 0.85;
+		}
+	}
