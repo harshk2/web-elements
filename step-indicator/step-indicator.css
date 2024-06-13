@@ -6,7 +6,7 @@
 }
  :root {
 	 --hue: 223;
-	 --bg: #e8e3e3;
+	 --bg: #d6eaf5;
 	 --fg: #1c1717;
 	 --primary: #910808;
 	 --trans-dur: 0.3s;
@@ -161,9 +161,9 @@
 /* Dark theme */
  @media (prefers-color-scheme: dark) {
 	 :root {
-		 --bg: #1c1717;
+		 --bg: #000000;
 		 --fg: #e8e3e3;
-		 --primary: #f76e6e;
+		 --primary: #248f8f;
 	}
 	 .btn {
 		 color: #1c1717;
