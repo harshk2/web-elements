@@ -1,0 +1,18 @@
+cat:
+  width: 400px;
+  margin: 30px;
+  aspect-ratio: 759 / 464;
+  --center-x: 35%;
+  --center-y: 47%;
+  --size-x: 20%;
+  --size-y: 33%;
+
+person:
+  width: 400px;
+  margin: 30px;
+  aspect-ratio: 626 / 417;
+  --center-x: 51%;
+  --center-y: 46%;
+  --size-x: 25%;
+  --size-y: 40%;
+  float: right;
