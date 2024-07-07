@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+ES+Deco:wght@100..400&display=swap");
+:root {
+     --dot-distance: 50px;
+     --dot-radius: 10%;
+     --accent-color: 250, 128, 114;
+}
+html {
+     font-size: 4vw;
+}
+
+@media (max-width: 600px) {
+     html {
+          font-size: 15px;
+     }
+}
+
+body {
+     margin: 0;
+     padding: 0;
+     height: 100%;
+     width: 100%;
+     overflow: hidden;
+}
+
+.pattern-container {
+     position: relative; /* reference point for absolute positioning */
+     width: 100vw;
+     height: 100vh;
+     background-color: black;
+     overflow: hidden;
+     min-width: 500px;
+}
+
+.pattern {
+     width: 200vw;
+     height: 100%;
+
+     background-image: radial-gradient(
+          circle,
+          rgba(var(--accent-color), 0.6) var(--dot-radius),
+          transparent var(--dot-radius)
+     );
+     background-size: var(--dot-distance) var(--dot-distance);
+     /* could animate this instead and just move 1 pattern-width (?) */
+     background-position: calc(var(--dot-distance) / 2) 0; /* center the first vertical row of dots */
+}
+.centered {
+     position: absolute;
+     top: calc(50% - 3rem);
+     left: 50%;
+     transform: translate(-50%, -50%);
+}
+p {
+     font-family: PlayWrite ES Deco;
+     font-size: 3rem;
+     text-align: center;
+     color: rgba(var(--accent-color), 1);
+}
